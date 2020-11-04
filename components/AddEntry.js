@@ -25,7 +25,7 @@ export default class AddEntry extends Component {
         eat: 0,
     }
 
-    increament = (metric) => {
+    increment = (metric) => {
 
         const { max, step } = getMetricMetaInfo(metric)
 
@@ -39,7 +39,7 @@ export default class AddEntry extends Component {
         })
     }
 
-    decreament = (metric) => {
+    decrement = (metric) => {
 
         this.setState(state => {
             const count = state[metric] - getMetricMetaInfo(metric).step
