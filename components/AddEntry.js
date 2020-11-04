@@ -22,7 +22,7 @@ export default class AddEntry extends Component {
         bike: 0,
         swim: 0,
         sleep: 0,
-        eat: 5
+        eat: 0,
     }
 
     increament = (metric) => {
@@ -83,7 +83,6 @@ export default class AddEntry extends Component {
         return (
             <View>
                 <DateHeader date={(new Date()).toLocaleDateString()} />
-                <Text>{JSON.stringify(this.state)}</Text>
                 {Object.keys(metaInfo).map((key) => {
                     const { getIcon, type, ...rest } = metaInfo[key]
                     const value = this.state[key]
