@@ -103,7 +103,6 @@ class AddEntry extends Component {
 
     render() {
         const metaInfo = getMetricMetaInfo()
-
         if (this.props.alreadyLogged) {
             return (
                 <View>
@@ -154,7 +153,8 @@ function mapStateToProps(state) {
     const key = timeToString()
 
     return {
-      alreadyLogged: state[key] && typeof state[key].today === 'undefined'
+      alreadyLogged: state[key] && typeof state[key].today === 'undefined',
+      data: state[key]
     }
 }
 
