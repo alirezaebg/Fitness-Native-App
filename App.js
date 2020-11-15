@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import reducer from './reducers'
 import History from './components/History'
 import Live from './components/Live'
+import { setLocalNotification } from './utils/helpers'
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
@@ -18,6 +19,7 @@ import Constants from 'expo-constants'
 
 import EntryDetail from './components/EntryDetail'
 import { createStackNavigator } from '@react-navigation/stack'
+
 
 function UdaciStatusBar({ backgroundColor, ...props }) {
   return (
@@ -110,6 +112,9 @@ const MainNav = () => (
 
 // App 
 export default class App extends React.Component {
+  componentDidMount() {
+    setLocalNotification()
+  }
   render() {
     const store = createStore(reducer)
     return (
